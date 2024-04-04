@@ -74,3 +74,9 @@ def returnBook(user):
   f.write(f"books = {books}")
   f.close()
   print(returnedBook,"book has been returned successfully!")
+
+def myBook(user):
+  if issued_books[user]:
+    display(issued_books[user])
+  else:
+    print("No books are issued")

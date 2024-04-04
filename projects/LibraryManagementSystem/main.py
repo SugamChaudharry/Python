@@ -38,7 +38,7 @@ while user:
     print("1. Display all books")
     print("4. Issue a book")
     print("5. Return a book")
-    print("6 My book")
+    print("6. My book")
     print("7. Exit")
 
   value = int(input("Enter your choice: "))
@@ -60,7 +60,7 @@ while user:
     Managment.returnBook(user)
 
   elif value == 6:
-    pass
+    Managment.myBook(user)
   elif value == 7:
     print("Thanks for using our software...")
     break
