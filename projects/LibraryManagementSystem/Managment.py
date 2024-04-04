@@ -14,7 +14,10 @@ def display(books):
 def addBook():
   book = input("Enter the name of the book: ")
   books.append(book)
-  print("The books has been added in the Library successfully!")
+  f = open("Library.py","w")
+  f.write(f"books = {books}")
+  f.close()
+  print(book , "book has been added in the Library successfully!")
 
 
 # ========= Delete a book
@@ -24,8 +27,11 @@ def deleteBook():
   display(books)
 
   n = int(input("Enter the id of the book: "))
-  books.pop(n - 1)
-  print("The book has been deleted successfully!")
+  book = books.pop(n - 1)
+  f = open("Library.py","w")
+  f.write(f"books = {books}")
+  f.close()
+  print(book , "book has been deleted successfully!")
 
 
 # ========= Issue a book

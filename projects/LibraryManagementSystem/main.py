@@ -29,12 +29,17 @@ user = User()
 
 
 while user:
-  print("1. Display all books")
-  print("2. Add a book")
-  print("3. Delete a book")
-  print("4. Issue a book")
-  print("5. Return a book")
-  print("6. Exit")
+  if user == "Admin":
+    print("1. Display all books")
+    print("2. Add a book")
+    print("3. Delete a book")
+    print("7. Exit")
+  else : 
+    print("1. Display all books")
+    print("4. Issue a book")
+    print("5. Return a book")
+    print("6 My book")
+    print("7. Exit")
 
   value = int(input("Enter your choice: "))
   print()
@@ -42,10 +47,10 @@ while user:
   if value == 1:
     Managment.display(books)
 
-  elif value == 2:
+  elif value == 2 and user == "Admin":
     Managment.addBook()
 
-  elif value == 3:
+  elif value == 3 and user == "Admin":
     Managment.deleteBook()
 
   elif value == 4:
@@ -55,9 +60,10 @@ while user:
     Managment.returnBook(user)
 
   elif value == 6:
+    pass
+  elif value == 7:
     print("Thanks for using our software...")
     break
-
   else:
     print("Invalid Input. Please Try Again!")
 
