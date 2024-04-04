@@ -5,10 +5,9 @@ from Account import *
 def auth(name):
   Id[name] = input("Enter your Password : ")
   f = open("Account.py","w")
+  issued_books[name] = []
   f.write(f"Id = {Id}\nissued_books = {issued_books}")
   f.close()
-
-
 
 def User():
   name = input("Enter your user name : ")
@@ -19,6 +18,7 @@ def User():
     return 0
   if name not in set(Id):    
     auth(name)
+    return name
   else:
     password = input("Verify your password : ")
     return name if password == Id[name] else User()
